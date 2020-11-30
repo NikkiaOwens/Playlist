@@ -26,18 +26,27 @@ public class Music {
 
             }
 
-            // do another for loop maybe for 2nd test
-
         }
         System.out.println("Forward: " + distanceGoingForward);
         System.out.println("Backward: " + distanceGoingBackward);
 
+//        Integer fastestPath;
+//
+//        if(distanceGoingForward < distanceGoingBackward){
+//            fastestPath = distanceGoingForward;
+//        } else {
+//            fastestPath = distanceGoingBackward;
+//        }
+        return fastestPath(distanceGoingForward, distanceGoingBackward);
+    }
+
+    public Integer fastestPath(Integer forward, Integer backward){
         Integer fastestPath;
 
-        if(distanceGoingForward < distanceGoingBackward){
-            fastestPath = distanceGoingForward;
+        if(forward < backward){
+            fastestPath = forward;
         } else {
-            fastestPath = distanceGoingBackward;
+            fastestPath = backward;
         }
 
         return fastestPath;
