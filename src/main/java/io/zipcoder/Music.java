@@ -14,26 +14,20 @@ public class Music {
 
         // count going forward!
         Integer endIndex = playList.length -1;
-        Integer distanceGoingForward = 0;
+        Integer distanceGoingForward = Integer.MAX_VALUE;
         Integer distanceGoingBackward = 0;
         for (int i = 0; i < playList.length ; i++) {
             if (playList[i] == selection) {
-                distanceGoingForward = i - startIndex;
+               // distanceGoingForward = i - startIndex;
+                if(i - startIndex < distanceGoingForward){
+                    distanceGoingForward = i - startIndex;
+                }
                 distanceGoingBackward = endIndex - i + startIndex + 1;
 
             }
 
             // do another for loop maybe for 2nd test
-/**
- * {1,2,3,4,5,6,7,8,9,10}
- * endIndex = 9
- * startIndex = 1
- * songIndex = 7
- * i = 7-1 = 6
- * 9 - 7 + 1 = 3 +1 because need to find distance not index
- * start is 2 song is 8
- *
- */
+
         }
         System.out.println("Forward: " + distanceGoingForward);
         System.out.println("Backward: " + distanceGoingBackward);
@@ -51,6 +45,16 @@ public class Music {
 }
 
 
+/**
+ * {1,2,3,4,5,6,7,8,9,10}
+ * endIndex = 9
+ * startIndex = 1
+ * songIndex = 7
+ * i = 7-1 = 6
+ * 9 - 7 + 1 = 3 +1 because need to find distance not index
+ * start is 2 song is 8
+ *
+ */
 
 
 
